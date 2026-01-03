@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كوكي كيكر متعدد اللاعبين</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-cookie-bite"></i> كوكي كيكر المتطور</h1>
+            <div class="user-info">
+                <span id="username">زائر</span>
+                <button id="login-btn">تسجيل الدخول</button>
+            </div>
+        </header>
+
+        <div class="game-area">
+            <div class="main-game">
+                <div class="cookie-container">
+                    <div id="cookie" class="cookie">
+                        <i class="fas fa-cookie-bite"></i>
+                    </div>
+                    <div class="cookie-count">
+                        <h2 id="cookie-count">0</h2>
+                        <p>كوكيز</p>
+                        <p id="cookies-per-second">0 كوكيز/ثانية</p>
+                    </div>
+                </div>
+
+                <div class="upgrades">
+                    <h3><i class="fas fa-level-up-alt"></i> التطويرات</h3>
+                    <div class="upgrades-list" id="upgrades-list">
+                        <!-- سيتم ملؤها بالجافاسكريبت -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <div class="leaderboard">
+                    <h3><i class="fas fa-trophy"></i> المتصدرين</h3>
+                    <div class="leaderboard-list" id="leaderboard-list">
+                        <div class="loading">جاري تحميل لوحة المتصدرين...</div>
+                    </div>
+                </div>
+
+                <div class="multiplayer">
+                    <h3><i class="fas fa-users"></i> اللعب مع الأصدقاء</h3>
+                    <div class="online-users" id="online-users">
+                        <p>0 لاعب متصل</p>
+                    </div>
+                    <button id="challenge-btn" class="challenge-btn">تحدي لاعب</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-box">
+                <h4>الإجمالي</h4>
+                <p id="total-cookies">0</p>
+            </div>
+            <div class="stat-box">
+                <h4>الوقت اللعب</h4>
+                <p id="play-time">00:00:00</p>
+            </div>
+            <div class="stat-box">
+                <h4>المستوى</h4>
+                <p id="player-level">1</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة تسجيل الدخول -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>تسجيل الدخول</h2>
+            <input type="text" id="login-username" placeholder="اسم المستخدم">
+            <input type="password" id="login-password" placeholder="كلمة المرور">
+            <button id="submit-login">دخول</button>
+            <p class="toggle-form">ليس لديك حساب؟ <a href="#" id="show-register">تسجيل</a></p>
+        </div>
+    </div>
+
+    <!-- نافذة التسجيل -->
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>إنشاء حساب</h2>
+            <input type="text" id="register-username" placeholder="اسم المستخدم">
+            <input type="email" id="register-email" placeholder="البريد الإلكتروني">
+            <input type="password" id="register-password" placeholder="كلمة المرور">
+            <button id="submit-register">تسجيل</button>
+            <p class="toggle-form">لديك حساب بالفعل؟ <a href="#" id="show-login">تسجيل الدخول</a></p>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>
